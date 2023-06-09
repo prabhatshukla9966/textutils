@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function Textform(props) {
-  const [text, setText] = useState("Enter Text Here to start");
+  const [text, setText] = useState("");
   const handleupclick = () => {
     console.log("Uppercase was clicked");
     let nayatext = text.toUpperCase();
@@ -27,6 +27,7 @@ export default function Textform(props) {
           <textarea
             className="form-control"
             value={text}
+            placeholder="Enter Text Here to start"
             onChange={Handleonchange}
             style={{
               backgroundColor: props.mode === "light" ? "white" : "grey",
@@ -34,10 +35,10 @@ export default function Textform(props) {
             id="mybox"
             rows="8"
           ></textarea>
-          <button className="btn btn-primary my-2 " onClick={handleupclick}>
+          <button className="btn btn-primary mx-1 my-2 " onClick={handleupclick}>
             Uppercase Button
           </button>
-          <button className="btn btn-primary my-2 " onClick={handlelowlick}>
+          <button className="btn btn-primary mx-1 my-2 " onClick={handlelowlick}>
             LowerCase Button
           </button>
         </div>
@@ -47,7 +48,7 @@ export default function Textform(props) {
         <h1>Your text summary</h1>
         <p>
           {" "}
-          {text.split(" ").length} words and {text.length} characters{" "}
+          {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters{" "}
         </p>
         <p>{0.008 * text.split(" ").length} Minutes to read</p>
         <h2>Preview</h2>

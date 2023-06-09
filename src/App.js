@@ -1,16 +1,16 @@
 import "./App.css";
 
 import Navbar from "./components/Navbar";
-import Textform from "./components/Textform";
 // import About from "./components/About";
 // import { useState } from "react";
+import Textform from './components/Textform'
 import React, { useState } from "react";
 import Alert from "./components/Alert";
 // import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const [mode, setmode] = useState("light");
-  const [alert, setalert] = useState("null");
+  const [alert, setalert] = useState(null);
   const showalert = (message, type) => {
     setalert({
       msg: message,
@@ -44,9 +44,9 @@ function App() {
           mode={mode}
           togglemode={togglemode}
         />
+        <Alert alert={alert} />
         <Textform Heading="Enter your text here" mode={mode} />
 
-        <Alert alert={alert} />
 
         {/* <Routes>
           <Route exact path="/about" element={<About />} /> */}
