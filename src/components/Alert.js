@@ -5,7 +5,6 @@ function Alert(props) {
   //     const lower = word.toLowerCase();
   //     return lower.charAt(0).toUpperCase() + lower.slice(1);
   // };
-  console.log("props==============",props);
   return props.alert ? (
     <>
       <div
